@@ -20,4 +20,8 @@ public class BooksService {
     public List<DetailedBookDto> findAllDetailedBooks() {
         return booksRepository.findAllDetailedBooks();
     }
+
+    public void updateTitleById(Long id, String newTitle) {
+        booksRepository.changeTitleById(id, newTitle);
+    }
 }

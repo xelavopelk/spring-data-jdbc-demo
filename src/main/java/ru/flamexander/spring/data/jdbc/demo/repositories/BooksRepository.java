@@ -21,5 +21,5 @@ public interface BooksRepository extends ListCrudRepository<Book, Long> {
 
     @Query("update books set title = :title where id = :id")
     @Modifying
-    void changeTitleById(String title, Long id);
+    void changeTitleById(Long id, String title);
 }

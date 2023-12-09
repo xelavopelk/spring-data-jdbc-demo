@@ -1,9 +1,7 @@
 package ru.flamexander.spring.data.jdbc.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.flamexander.spring.data.jdbc.demo.dtos.DetailedBookDto;
 import ru.flamexander.spring.data.jdbc.demo.services.BooksService;
 
@@ -22,5 +20,10 @@ public class BooksController {
     @GetMapping
     public List<DetailedBookDto> findAllDetailedBooks() {
         return booksService.findAllDetailedBooks();
+    }
+
+    @PatchMapping("/{id}/title")
+    public void updateTitleById(@PathVariable Long id, @RequestParam String value) {
+        booksService.updateTitleById(id, value);
     }
 }
