@@ -3,9 +3,8 @@ package ru.flamexander.spring.data.jdbc.demo.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.flamexander.spring.data.jdbc.demo.dtos.DetailedBookDto;
+import ru.flamexander.spring.data.jdbc.demo.dtos.SimplestPageDto;
 import ru.flamexander.spring.data.jdbc.demo.services.BooksService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/books")
@@ -18,8 +17,8 @@ public class BooksController {
     }
 
     @GetMapping
-    public List<DetailedBookDto> findAllDetailedBooks() {
-        return booksService.findAllDetailedBooks();
+    public SimplestPageDto<DetailedBookDto> findAllDetailedBooks() {
+        return new SimplestPageDto<>(booksService.findAllDetailedBooks());
     }
 
     @PatchMapping("/{id}/title")

@@ -40,7 +40,7 @@ public class CategoriesService {
         categoriesRepository.save(newCategory);
     }
 
-    public void updateCategory(CreateOrUpdateCategoryDtoRq createOrUpdateCategoryDtoRq) {
+    public void fullUpdateCategory(CreateOrUpdateCategoryDtoRq createOrUpdateCategoryDtoRq) {
         Category updatedCategory = new Category(createOrUpdateCategoryDtoRq.getId(), createOrUpdateCategoryDtoRq.getTitle());
         categoriesRepository.save(updatedCategory);
     }
