@@ -2,12 +2,15 @@ package ru.flamexander.spring.data.jdbc.demo.dtos;
 
 import ru.flamexander.spring.data.jdbc.demo.entities.Genre;
 
+import java.math.BigDecimal;
+
 public class DetailedBookDto {
     private Long id;
     private String title;
     private Genre genre;
     private String authorName;
     private String description;
+    private BigDecimal avgScore;
 
     public Long getId() {
         return id;
@@ -47,6 +50,14 @@ public class DetailedBookDto {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public BigDecimal getAvgScore() {
+        return this.avgScore;
+    }
+
+    public void setAvgScore(BigDecimal val) {
+        this.avgScore = val;
     }
 
     public DetailedBookDto() {

@@ -5,14 +5,14 @@ import org.springframework.data.annotation.PersistenceCreator;
 import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("BOOKS")
+@Table("books")
 public class Book {
     @Id
     private Long id;
     private String title;
     private Long authorId;
     private Genre genre;
-    @MappedCollection(idColumn = "BOOK_ID")
+    @MappedCollection(idColumn = "book_id")
     private BookDetails bookDetails;
 
     public Long getId() {

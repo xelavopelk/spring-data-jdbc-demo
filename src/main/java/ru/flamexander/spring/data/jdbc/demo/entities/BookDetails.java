@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceCreator;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("BOOKS_DETAILS")
+@Table("books_details")
 public class BookDetails {
     @Id
     private Long id;
